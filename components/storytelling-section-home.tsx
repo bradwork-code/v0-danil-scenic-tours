@@ -1,0 +1,51 @@
+'use client'
+
+import Link from 'next/link'
+
+export default function StorytellingSectionHome() {
+  return (
+    <section className="py-20 px-4 bg-[#FAF4E8]">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Text */}
+          <div className="space-y-6">
+            <h2 className="font-playfair text-4xl md:text-5xl text-[#2A4A35]">
+              More Than a Safari. A Connection.
+            </h2>
+            <p className="font-inter text-lg text-[#1C1208] leading-relaxed" style={{ lineHeight: 1.8 }}>
+              At Danil Scenic Tours, we believe travel should change you. Not just show you things — but connect you deeply to Kenya's landscapes, its wildlife, and its people. Whether it's your first game drive or your tenth, we build every experience around you.
+            </p>
+            <Link
+              href="/about"
+              className="inline-block text-[#D4870A] font-montserrat font-semibold border-b-2 border-[#D4870A] pb-1 hover:opacity-80 transition-opacity"
+            >
+              Read Our Story →
+            </Link>
+          </div>
+
+          {/* Placeholder Image */}
+          <div
+            style={{
+              backgroundColor: '#C4A882',
+              borderRadius: '12px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              aspectRatio: '4/3',
+              width: '100%',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '13px',
+              fontStyle: 'italic',
+              color: '#6B5240',
+              textAlign: 'center',
+              padding: '16px',
+              letterSpacing: '0.3px'
+            }}
+          >
+            [Photo: Tourists laughing and watching wildlife from open jeep roof]
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
