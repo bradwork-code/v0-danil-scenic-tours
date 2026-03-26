@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
@@ -12,51 +13,61 @@ const destinations = [
     name: 'Maasai Mara National Reserve',
     description: 'Kenya\'s most iconic reserve. Home to the Big Five, big cats, and the annual Great Wildebeest Migration (July–October).',
     image: '[Photo: Maasai Mara savannah at golden hour — wide open plains, acacia trees, warm light]',
+    isPlaceholder: true,
   },
   {
     name: 'Amboseli National Park',
     description: 'Famous elephant herds set against the breathtaking backdrop of Mt. Kilimanjaro.',
-    image: '[Photo: Elephant herd against Mt. Kilimanjaro backdrop, Amboseli National Park]',
+    image: '/images/amboseli-elephants.webp',
+    isPlaceholder: false,
   },
   {
     name: 'Tsavo East & West National Parks',
     description: 'Kenya\'s largest wilderness. Dramatic landscapes, red-dusted elephants, and diverse wildlife.',
     image: '[Photo: Leopard resting in tree, Tsavo National Park]',
+    isPlaceholder: true,
   },
   {
     name: 'Lake Nakuru National Park',
     description: 'Rift Valley gem renowned for its flamingo colonies, rhinos, and leopards.',
     image: '[Photo: Flamingos in flight over Lake Nakuru, pink sky reflection]',
+    isPlaceholder: true,
   },
   {
     name: 'Lake Bogoria National Reserve',
     description: 'Hot springs, geysers, and vast flamingo colonies on a striking soda lake.',
     image: '[Photo: Lake Bogoria hot springs and flamingo colony]',
+    isPlaceholder: true,
   },
   {
     name: 'Aberdare National Park',
     description: 'Dense highland forests with waterfalls, mountain streams, and dense vegetation.',
     image: '[Photo: Aberdare National Park highland waterfalls and forest]',
+    isPlaceholder: true,
   },
   {
     name: 'Mt. Kenya',
     description: 'Kenya\'s second-highest mountain. Dramatic clouds, verdant slopes, and alpine trails.',
     image: '[Photo: Mt. Kenya highland peak — dramatic clouds, greenery]',
+    isPlaceholder: true,
   },
   {
     name: 'Meru National Park',
     description: 'Remote wilderness featuring the Big Five, dramatic rocky outcrops, and pristine landscapes.',
     image: '[Photo: Meru National Park remote wilderness at dusk]',
+    isPlaceholder: true,
   },
   {
     name: 'Samburu National Reserve',
     description: 'Semi-arid landscape home to reticulated giraffes and other unique species.',
     image: '[Photo: Samburu landscape — reticulated giraffe against dry acacia brush]',
+    isPlaceholder: true,
   },
   {
     name: 'Diani Beach',
     description: 'Pristine white sand coastline along the Indian Ocean. Perfect for snorkelling, diving, and relaxation.',
     image: '[Photo: Diani Beach — white sand, turquoise Indian Ocean, palm trees]',
+    isPlaceholder: true,
   },
 ]
 
@@ -106,24 +117,35 @@ export default function DestinationsPage() {
                 key={index}
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300"
               >
-                {/* Placeholder Image */}
-                <div
-                  style={{
-                    backgroundColor: '#C4A882',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    aspectRatio: '3/2',
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '13px',
-                    fontStyle: 'italic',
-                    color: '#6B5240',
-                    textAlign: 'center',
-                    padding: '16px',
-                  }}
-                >
-                  {dest.image}
-                </div>
+                {/* Image */}
+                {dest.isPlaceholder ? (
+                  <div
+                    style={{
+                      backgroundColor: '#C4A882',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      aspectRatio: '3/2',
+                      fontFamily: 'Inter, sans-serif',
+                      fontSize: '13px',
+                      fontStyle: 'italic',
+                      color: '#6B5240',
+                      textAlign: 'center',
+                      padding: '16px',
+                    }}
+                  >
+                    {dest.image}
+                  </div>
+                ) : (
+                  <div className="relative w-full" style={{ aspectRatio: '3/2' }}>
+                    <Image
+                      src={dest.image}
+                      alt={dest.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                )}
 
                 {/* Content */}
                 <div className="p-6 space-y-4">

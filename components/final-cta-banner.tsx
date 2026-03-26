@@ -1,24 +1,29 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function FinalCTABanner() {
   return (
     <section className="relative overflow-hidden py-24 px-4">
-      {/* Placeholder Background */}
-      <div
-        className="absolute inset-0 flex items-center justify-center text-center ken-burns-zoom"
-        style={{
-          backgroundColor: '#C4A882',
-          fontFamily: 'Inter, sans-serif',
-          fontSize: '13px',
-          fontStyle: 'italic',
-          color: '#6B5240',
-          zIndex: 0,
-        }}
-      >
-        [Photo: Elephant herd against Mt. Kilimanjaro backdrop, Amboseli National Park]
+      {/* Background Image */}
+      <div className="absolute inset-0 ken-burns-zoom" style={{ zIndex: 0 }}>
+        <Image
+          src="/images/amboseli-elephants.webp"
+          alt="Amboseli elephants with Mt. Kilimanjaro"
+          fill
+          className="object-cover"
+        />
       </div>
+
+      {/* Dark Overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(135deg, rgba(28,18,8,0.72) 0%, rgba(28,18,8,0.2) 100%)',
+          zIndex: 1,
+        }}
+      />
 
       {/* Dark Overlay */}
       <div
