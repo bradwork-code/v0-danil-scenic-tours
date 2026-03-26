@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
@@ -8,16 +9,19 @@ const destinations = [
     name: 'Maasai Mara',
     description: 'Kenya\'s most iconic reserve with the Big Five and Great Wildebeest Migration.',
     image: '[Photo: Maasai Mara savannah at golden hour — wide open plains, acacia trees, warm light]',
+    isPlaceholder: true,
   },
   {
     name: 'Amboseli',
     description: 'Famous elephant herds set against Mt. Kilimanjaro\'s breathtaking backdrop.',
-    image: '[Photo: Elephant herd against Mt. Kilimanjaro backdrop, Amboseli National Park]',
+    image: '/images/amboseli-elephants.webp',
+    isPlaceholder: false,
   },
   {
     name: 'Lake Nakuru',
     description: 'Rift Valley gem renowned for flamingo colonies, rhinos, and leopards.',
     image: '[Photo: Flamingos in flight over Lake Nakuru, pink sky reflection]',
+    isPlaceholder: true,
   },
 ]
 
@@ -38,25 +42,36 @@ export default function FeaturedDestinations() {
               key={index}
               className="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300"
             >
-              {/* Placeholder Image */}
-              <div
-                style={{
-                  backgroundColor: '#C4A882',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  aspectRatio: '3/2',
-                  width: '100%',
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: '13px',
-                  fontStyle: 'italic',
-                  color: '#6B5240',
-                  textAlign: 'center',
-                  padding: '16px',
-                }}
-              >
-                {dest.image}
-              </div>
+              {/* Image */}
+              {dest.isPlaceholder ? (
+                <div
+                  style={{
+                    backgroundColor: '#C4A882',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    aspectRatio: '3/2',
+                    width: '100%',
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '13px',
+                    fontStyle: 'italic',
+                    color: '#6B5240',
+                    textAlign: 'center',
+                    padding: '16px',
+                  }}
+                >
+                  {dest.image}
+                </div>
+              ) : (
+                <div className="relative w-full" style={{ aspectRatio: '3/2' }}>
+                  <Image
+                    src={dest.image}
+                    alt={dest.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              )}
 
               {/* Content */}
               <div className="p-6 space-y-4">

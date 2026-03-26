@@ -1,26 +1,27 @@
 'use client'
 
+import Image from 'next/image'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import FloatingButtons from '@/components/floating-buttons'
 import AccessibilityToolbar from '@/components/accessibility-toolbar'
 
 const galleryImages = [
-  '[Photo: Maasai Mara savannah at golden hour — wide open plains, acacia trees, warm light]',
-  '[Photo: Elephant herd against Mt. Kilimanjaro backdrop, Amboseli National Park]',
-  '[Photo: 4x4 pop-up roof safari jeep on open savannah game drive]',
-  '[Photo: Flamingos in flight over Lake Nakuru, pink sky reflection]',
-  '[Photo: Tourists laughing and watching wildlife from open jeep roof]',
-  '[Photo: Diani Beach — white sand, turquoise Indian Ocean, palm trees]',
-  '[Photo: Hot air balloon at sunrise over Maasai Mara, golden mist below]',
-  '[Photo: Kenyan cultural experience — traditional attire, warm community gathering]',
-  '[Photo: Leopard resting in tree, Tsavo National Park]',
-  '[Photo: Lake Bogoria hot springs and flamingo colony]',
-  '[Photo: Mt. Kenya highland peak — dramatic clouds, greenery]',
-  '[Photo: Samburu landscape — reticulated giraffe against dry acacia brush]',
-  '[Photo: Family group on Kenya safari, smiling, binoculars out]',
-  '[Photo: Meru National Park remote wilderness at dusk]',
-  '[Photo: Aberdare National Park highland waterfalls and forest]',
+  { image: '/images/elephant-kilimanjaro.webp', isPlaceholder: false },
+  { image: '/images/amboseli-elephants.webp', isPlaceholder: false },
+  { image: '[Photo: 4x4 pop-up roof safari jeep on open savannah game drive]', isPlaceholder: true },
+  { image: '[Photo: Flamingos in flight over Lake Nakuru, pink sky reflection]', isPlaceholder: true },
+  { image: '[Photo: Tourists laughing and watching wildlife from open jeep roof]', isPlaceholder: true },
+  { image: '/images/beach-diving.webp', isPlaceholder: false },
+  { image: '[Photo: Hot air balloon at sunrise over Maasai Mara, golden mist below]', isPlaceholder: true },
+  { image: '/images/cultural-gathering.webp', isPlaceholder: false },
+  { image: '[Photo: Leopard resting in tree, Tsavo National Park]', isPlaceholder: true },
+  { image: '[Photo: Lake Bogoria hot springs and flamingo colony]', isPlaceholder: true },
+  { image: '[Photo: Mt. Kenya highland peak — dramatic clouds, greenery]', isPlaceholder: true },
+  { image: '/images/zebras-savanna.webp', isPlaceholder: false },
+  { image: '[Photo: Family group on Kenya safari, smiling, binoculars out]', isPlaceholder: true },
+  { image: '[Photo: Meru National Park remote wilderness at dusk]', isPlaceholder: true },
+  { image: '[Photo: Aberdare National Park highland waterfalls and forest]', isPlaceholder: true },
 ]
 
 export default function GalleryPage() {
@@ -64,30 +65,47 @@ export default function GalleryPage() {
       <section className="py-20 px-4 bg-[#FAF4E8]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {galleryImages.map((image, index) => (
+            {galleryImages.map((item, index) => (
               <div
                 key={index}
                 className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 style={{
-                  backgroundColor: '#C4A882',
                   aspectRatio: '3/2',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: '16px',
+                  position: 'relative',
                 }}
               >
-                <p
-                  style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '13px',
-                    fontStyle: 'italic',
-                    color: '#6B5240',
-                    textAlign: 'center',
-                  }}
-                >
-                  {image}
-                </p>
+                {item.isPlaceholder ? (
+                  <div
+                    style={{
+                      backgroundColor: '#C4A882',
+                      width: '100%',
+                      height: '100%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      padding: '16px',
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontFamily: 'Inter, sans-serif',
+                        fontSize: '13px',
+                        fontStyle: 'italic',
+                        color: '#6B5240',
+                        textAlign: 'center',
+                      }}
+                    >
+                      {item.image}
+                    </p>
+                  </div>
+                ) : (
+                  <Image
+                    src={item.image}
+                    alt="Gallery image"
+                    fill
+                    className="object-cover"
+                  />
+                )}
               </div>
             ))}
           </div>

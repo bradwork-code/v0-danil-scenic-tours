@@ -1,24 +1,49 @@
 'use client'
 
+import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDown } from 'lucide-react'
 
+const slideImages = [
+  '/images/cheetah-resting.webp',
+  '/images/impala-herd.webp',
+  '/images/leopard-cub.webp',
+  '/images/crowned-crane.webp',
+]
+
 export default function Hero() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % slideImages.length)
+    }, 5000) // Change image every 5 seconds
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section className="h-screen flex flex-col items-center justify-center relative overflow-hidden pt-20">
-      {/* Placeholder Background */}
-      <div
-        className="absolute inset-0 flex items-center justify-center text-center ken-burns-zoom"
-        style={{
-          backgroundColor: '#C4A882',
-          fontFamily: 'Inter, sans-serif',
-          fontSize: '13px',
-          fontStyle: 'italic',
-          color: '#6B5240',
-          zIndex: 0,
-        }}
-      >
-        [Photo: Maasai Mara savannah at golden hour — wide open plains, acacia trees, warm light]
+      {/* Slideshow Background */}
+      <div className="absolute inset-0 z-0">
+        {slideImages.map((image, index) => (
+          <div
+            key={index}
+            className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+            style={{
+              opacity: index === currentImageIndex ? 1 : 0,
+            }}
+          >
+            <Image
+              src={image}
+              alt={`Kenya wildlife slide ${index + 1}`}
+              fill
+              className="object-cover"
+              priority={index === 0}
+            />
+          </div>
+        ))}
       </div>
 
       {/* Dark Gradient Overlay */}
