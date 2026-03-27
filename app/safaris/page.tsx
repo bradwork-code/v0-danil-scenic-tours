@@ -1,5 +1,6 @@
 'use client'
 
+// Optimized Safari Experiences Page with Dynamic Image Slideshow
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -133,10 +134,10 @@ const SafarisPage = () => {
       </section>
 
       {/* Services */}
-      <section className="py-20 px-4 bg-[#FAF4E8]">
-        <div className="max-w-7xl mx-auto space-y-12">
+      <section className="py-20 md:py-28 px-4 md:px-6 bg-[#FAF4E8]">
+        <div className="max-w-7xl mx-auto space-y-12 md:space-y-16">
           {filteredServices.map((service, index) => (
-            <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white rounded-2xl overflow-hidden shadow-lg">
+            <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               {/* Image */}
               {service.isPlaceholder ? (
                 <div
@@ -163,19 +164,20 @@ const SafarisPage = () => {
                     alt={service.title}
                     fill
                     className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
               )}
 
               {/* Content */}
-              <div className="p-8 space-y-4">
-                <h2 className="text-3xl font-playfair text-[#2A4A35]">
+              <div className="p-6 md:p-10 space-y-4 md:space-y-6">
+                <h2 className="text-2xl md:text-4xl font-playfair text-[#2A4A35]">
                   {service.title}
                 </h2>
-                <p className="text-[#1C1208] font-inter leading-relaxed">
+                <p className="text-[#1C1208] font-inter leading-relaxed text-base md:text-lg">
                   {service.description}
                 </p>
-                <div className="text-sm text-[#1C1208] font-inter whitespace-pre-line opacity-90">
+                <div className="text-sm md:text-base text-[#1C1208] font-inter whitespace-pre-line opacity-90">
                   {service.details}
                 </div>
                 <Link

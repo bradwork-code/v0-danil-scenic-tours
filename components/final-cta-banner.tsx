@@ -26,15 +26,6 @@ export default function FinalCTABanner() {
         }}
       />
 
-      {/* Dark Overlay */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: 'linear-gradient(135deg, rgba(28,18,8,0.72) 0%, rgba(28,18,8,0.2) 100%)',
-          zIndex: 1,
-        }}
-      />
-
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <h2 className="font-cormorant text-4xl md:text-6xl lg:text-7xl text-white mb-16 md:mb-20 leading-tight">
