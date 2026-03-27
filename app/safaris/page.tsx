@@ -1,6 +1,6 @@
 'use client'
 
-// Optimized Safari Experiences Page with Dynamic Image Slideshow
+// Optimized Safari Experiences Page with Dynamic Image Slideshow - v2
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -22,7 +22,7 @@ const services = [
     title: 'Safari Tours',
     tag: 'Safari Tours',
     description: 'Guided game drives through Kenya\'s greatest national parks in our 4x4 pop-up roof jeeps. Witness the Big Five in their natural habitat.',
-    details: 'Parks: Maasai Mara · Amboseli · Tsavo East & West · Lake Nakuru · Lake Bogoria · Aberdare · Mt. Kenya · Meru · Samburu\nAvailable as: Private or Group | From $128/person/day (excl. international flights)',
+    details: 'Parks: Maasai Mara · Amboseli · Tsavo East & West · Lake Nakuru · Lake Bogoria · Aberdare · Mt. Kenya · Meru · Samburu\nAvailable as: Private or Group',
     image: '/images/elephant-kilimanjaro.webp',
     isPlaceholder: false,
   },
@@ -98,6 +98,7 @@ const SafarisPage = () => {
                 fill
                 className="object-cover"
                 priority={index === 0}
+                sizes="100vw"
               />
             </div>
           ))}
@@ -114,7 +115,7 @@ const SafarisPage = () => {
             Safari Experiences Built Around You.
           </h1>
           <p className="text-white text-lg md:text-xl max-w-2xl mx-auto" style={{ opacity: 0.85 }}>
-            Private & group tours across Kenya. From $128/person/day. Fully customizable.
+            Private & group tours across Kenya. Fully customizable.
           </p>
         </div>
       </section>

@@ -17,7 +17,6 @@ const galleryImages = [
   { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-loren-nelson-iii-393937649-14779646-JNYFWwU42lFLNOQPguKoXD6t0DPdE7.webp', isPlaceholder: false },
   { image: '/images/cultural-gathering.webp', isPlaceholder: false },
   { image: '/images/cheetah-resting.webp', isPlaceholder: false },
-  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2815%29-3ELJ3hQTT33H8nK1hqEBM53zsX5JEk.webp', isPlaceholder: false },
   { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2814%29-PPbHtHwWOiOCF897LhCVKG6lE946GY.webp', isPlaceholder: false },
   { image: '/images/zebras-savanna.webp', isPlaceholder: false },
   { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2813%29-dvsdfGxqdqYzb94D6e93B8K10dhmKW.webp', isPlaceholder: false },

@@ -50,8 +50,8 @@ const destinations = [
   {
     name: 'Aberdare National Park',
     description: 'Dense highland forests with waterfalls, mountain streams, and dense vegetation.',
-    image: '[Photo: Aberdare National Park highland waterfalls and forest]',
-    isPlaceholder: true,
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2817%29-Cqk060woGnPsSL466intzq9kOsG3WA.webp',
+    isPlaceholder: false,
   },
   {
     name: 'Mt. Kenya',
@@ -62,8 +62,8 @@ const destinations = [
   {
     name: 'Meru National Park',
     description: 'Remote wilderness featuring the Big Five, dramatic rocky outcrops, and pristine landscapes.',
-    image: '[Photo: Meru National Park remote wilderness at dusk]',
-    isPlaceholder: true,
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2818%29-1SnJ32U0g0LQrcsevyrXtdAYw4riyf.webp',
+    isPlaceholder: false,
   },
   {
     name: 'Samburu National Reserve',
