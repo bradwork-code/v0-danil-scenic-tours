@@ -11,8 +11,8 @@ const galleryImages = [
   { image: '/images/elephant-kilimanjaro.webp', isPlaceholder: false },
   { image: '/images/amboseli-elephants.webp', isPlaceholder: false },
   { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2812%29-s02sGMy6RmxVwGRkXsuExT87bOTlVI.webp', isPlaceholder: false },
-  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2812%29-s02sGMy6RmxVwGRkXsuExT87bOTlVI.webp', isPlaceholder: false },
-  { image: '[Photo: Tourists laughing and watching wildlife from open jeep roof]', isPlaceholder: true },
+  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2815%29-3ELJ3hQTT33H8nK1hqEBM53zsX5JEk.webp', isPlaceholder: false },
+  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29-okv68gOhxJpXw4n1wmi6LzVWsS5NI3.webp', isPlaceholder: false },
   { image: '/images/beach-diving.webp', isPlaceholder: false },
   { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-loren-nelson-iii-393937649-14779646-JNYFWwU42lFLNOQPguKoXD6t0DPdE7.webp', isPlaceholder: false },
   { image: '/images/cultural-gathering.webp', isPlaceholder: false },
@@ -85,15 +85,15 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-20 px-4 bg-[#FAF4E8]">
+      <section className="py-16 md:py-20 px-4 bg-[#FAF4E8]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {galleryImages.map((item, index) => (
               <div
                 key={index}
-                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
                 style={{
-                  aspectRatio: '3/2',
+                  aspectRatio: '4/3',
                   position: 'relative',
                 }}
               >
@@ -127,6 +127,8 @@ export default function GalleryPage() {
                     alt="Gallery image"
                     fill
                     className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading={index > 3 ? 'lazy' : 'eager'}
                   />
                 )}
               </div>

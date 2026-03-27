@@ -10,17 +10,18 @@ import AccessibilityToolbar from '@/components/accessibility-toolbar'
 import { ArrowRight } from 'lucide-react'
 
 const heroSlideImages = [
-  '/images/impala-herd.webp',
-  '/images/leopard-cub.webp',
-  '/images/crowned-crane.webp',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29-okv68gOhxJpXw4n1wmi6LzVWsS5NI3.webp',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2812%29-s02sGMy6RmxVwGRkXsuExT87bOTlVI.webp',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2813%29-dvsdfGxqdqYzb94D6e93B8K10dhmKW.webp',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2814%29-PPbHtHwWOiOCF897LhCVKG6lE946GY.webp',
 ]
 
 const destinations = [
   {
     name: 'Maasai Mara National Reserve',
     description: 'Kenya\'s most iconic reserve. Home to the Big Five, big cats, and the annual Great Wildebeest Migration (July–October).',
-    image: '[Photo: Maasai Mara savannah at golden hour — wide open plains, acacia trees, warm light]',
-    isPlaceholder: true,
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29-okv68gOhxJpXw4n1wmi6LzVWsS5NI3.webp',
+    isPlaceholder: false,
   },
   {
     name: 'Amboseli National Park',
@@ -93,7 +94,7 @@ export default function DestinationsPage() {
       <Navbar />
       
       {/* Hero with Slideshow */}
-      <section className="relative h-96 flex flex-col items-center justify-center pt-20">
+      <section className="relative h-[600px] md:h-screen flex flex-col items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           {heroSlideImages.map((image, index) => (
             <div

@@ -8,8 +8,8 @@ const destinations = [
   {
     name: 'Maasai Mara',
     description: 'Kenya\'s most iconic reserve with the Big Five and Great Wildebeest Migration.',
-    image: '[Photo: Maasai Mara savannah at golden hour — wide open plains, acacia trees, warm light]',
-    isPlaceholder: true,
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29-okv68gOhxJpXw4n1wmi6LzVWsS5NI3.webp',
+    isPlaceholder: false,
   },
   {
     name: 'Amboseli',
@@ -36,11 +36,11 @@ export default function FeaturedDestinations() {
           Explore some of Kenya's most spectacular destinations
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {destinations.map((dest, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
             >
               {/* Image */}
               {dest.isPlaceholder ? (
@@ -50,7 +50,7 @@ export default function FeaturedDestinations() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    aspectRatio: '3/2',
+                    aspectRatio: '4/3',
                     width: '100%',
                     fontFamily: 'Inter, sans-serif',
                     fontSize: '13px',
@@ -63,12 +63,13 @@ export default function FeaturedDestinations() {
                   {dest.image}
                 </div>
               ) : (
-                <div className="relative w-full" style={{ aspectRatio: '3/2' }}>
+                <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
                   <Image
                     src={dest.image}
                     alt={dest.name}
                     fill
                     className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
               )}

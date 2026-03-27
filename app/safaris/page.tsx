@@ -10,9 +10,10 @@ import AccessibilityToolbar from '@/components/accessibility-toolbar'
 import { ArrowRight } from 'lucide-react'
 
 const heroSlideImages = [
-  '/images/elephant-kilimanjaro.webp',
-  '/images/amboseli-elephants.webp',
-  '/images/cheetah-resting.webp',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29-okv68gOhxJpXw4n1wmi6LzVWsS5NI3.webp',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2812%29-s02sGMy6RmxVwGRkXsuExT87bOTlVI.webp',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2813%29-dvsdfGxqdqYzb94D6e93B8K10dhmKW.webp',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-loren-nelson-iii-393937649-14779646-JNYFWwU42lFLNOQPguKoXD6t0DPdE7.webp',
 ]
 
 const services = [
@@ -58,8 +59,7 @@ const services = [
   },
 ]
 
-export default function SafarisPage() {
-  const [selectedFilter, setSelectedFilter] = useState('All')
+const SafarisPage = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   useEffect(() => {
@@ -69,18 +69,12 @@ export default function SafarisPage() {
     return () => clearInterval(interval)
   }, [])
 
-  const filters = ['All', 'Safari Tours', 'Cultural', 'Adventure', 'Beach']
-
-  const filteredServices = selectedFilter === 'All'
-    ? services
-    : services.filter((s) => s.tag === selectedFilter)
-
   return (
     <main className="min-h-screen bg-[#FAF4E8]">
       <Navbar />
       
       {/* Hero with Slideshow */}
-      <section className="relative h-96 flex flex-col items-center justify-center pt-20">
+      <section className="relative h-[600px] md:h-screen flex flex-col items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           {heroSlideImages.map((image, index) => (
             <div
@@ -92,7 +86,7 @@ export default function SafarisPage() {
             >
               <Image
                 src={image}
-                alt={`Safari experiences slide ${index + 1}`}
+                alt={`Kenya safaris slideshow ${index + 1}`}
                 fill
                 className="object-cover"
                 priority={index === 0}
