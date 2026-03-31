@@ -64,7 +64,7 @@ export default function Hero() {
         </div>
         
         <h1 className="font-cormorant text-4xl sm:text-5xl md:text-7xl text-white mb-4 md:mb-6 leading-tight">
-          Kenya Is Calling.
+          Welcome To Danil Scenic Tours!
         </h1>
         
         <p className="text-white text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed" style={{ opacity: 0.85 }}>
@@ -73,16 +73,18 @@ export default function Hero() {
 
         <div className="flex gap-3 md:gap-4 justify-center flex-wrap">
           <Link
-            href="/safaris"
-            className="px-6 md:px-8 py-2 md:py-3 bg-[#D4870A] text-[#1C1208] font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all pulse-glow text-sm md:text-base"
+            href="/book"
+            className="px-6 md:px-8 py-2 md:py-3 bg-[#F97316] text-white font-montserrat font-semibold rounded-lg hover:bg-[#EA580C] hover:shadow-lg transition-all text-sm md:text-base flex items-center gap-2"
+            aria-label="Book your safari adventure"
           >
-            Explore Our Safaris
+            Book Your Adventure <span aria-hidden="true">&gt;</span>
           </Link>
           <Link
-            href="/book"
-            className="px-6 md:px-8 py-2 md:py-3 border-2 border-white text-white font-montserrat font-semibold rounded-lg hover:bg-white hover:text-[#2A4A35] transition-all text-sm md:text-base"
+            href="/safaris"
+            className="px-6 md:px-8 py-2 md:py-3 border-2 border-white text-white font-montserrat font-semibold rounded-lg hover:bg-white hover:text-[#1A1F2C] transition-all text-sm md:text-base"
+            aria-label="Explore our safari packages"
           >
-            Plan My Trip
+            Explore Safaris
           </Link>
         </div>
       </div>
