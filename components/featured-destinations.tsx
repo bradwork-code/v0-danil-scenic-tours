@@ -94,16 +94,6 @@ export default function FeaturedDestinations() {
             </div>
           ))}
         </div>
-
-        {/* CTA Button to Full Destinations Page */}
-        <div className="text-center mt-16">
-          <Link
-            href="/destinations"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#D4870A] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all hover:gap-3"
-          >
-            Explore All Destinations <ArrowRight size={20} />
-          </Link>
-        </div>
       </div>
     </section>
   )
