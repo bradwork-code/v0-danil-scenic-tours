@@ -8,7 +8,7 @@ const destinations = [
   {
     name: 'Maasai Mara',
     description: 'Kenya\'s most iconic reserve with the Big Five and Great Wildebeest Migration.',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29-okv68gOhxJpXw4n1wmi6LzVWsS5NI3.webp',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-03-27%20094056-epSavrISmZLiwYYh4tsgGqat52e34W.webp',
     isPlaceholder: false,
   },
   {
@@ -70,6 +70,8 @@ export default function FeaturedDestinations() {
                     fill
                     className="object-cover"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    priority={index === 0}
+                    loading={index === 0 ? 'eager' : 'lazy'}
                   />
                 </div>
               )}

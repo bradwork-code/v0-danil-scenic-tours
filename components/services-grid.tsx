@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Car } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 const services = [
   {
@@ -107,24 +107,15 @@ export default function ServicesGrid() {
             className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
             aria-label="Custom Safaris service"
           >
-            {/* Maasai Mara Map/Itinerary Placeholder */}
-            <div
-              style={{
-                backgroundColor: '#C4A882',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                aspectRatio: '4/3',
-                width: '100%',
-                fontFamily: 'Inter, sans-serif',
-                fontSize: '13px',
-                fontStyle: 'italic',
-                color: '#6B5240',
-                textAlign: 'center',
-                padding: '16px',
-              }}
-            >
-              Maasai Mara Map & Itinerary
+            {/* Custom Safaris Image */}
+            <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-31%20at%2010.39.00-zWbc5Kff8Ov83PkpY3KGpLCAFeWlks.webp"
+                alt="Custom Safaris - Luxury relaxation area with fruits and beachfront view by Danil Scenic Tours Nairobi"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover"
+              />
             </div>
 
             {/* Content */}
@@ -149,18 +140,15 @@ export default function ServicesGrid() {
             className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
             aria-label="Professional Car Hire service"
           >
-            {/* Car Icon Background */}
-            <div
-              style={{
-                backgroundColor: '#F97316',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                aspectRatio: '4/3',
-                width: '100%',
-              }}
-            >
-              <Car size={80} className="text-white opacity-80" />
+            {/* Car Hire Image */}
+            <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-31%20at%2022.58.01-CLCCC7SKHsOzZrZZbCo84McmWU3mT7.webp"
+                alt="Professional Car Hire - Safari 4x4 Land Cruiser vehicle by Danil Scenic Tours Nairobi"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover"
+              />
             </div>
 
             {/* Content */}
