@@ -36,7 +36,7 @@ export default function ServicesGrid() {
     <section className="py-20 px-4 bg-[#F2E8D5]">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-playfair text-[#2A4A35] text-center mb-16">
-          What We Offer
+          Kenya Safari Tours, Kenya Safari Packages & Private Safari Tours
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -69,7 +69,7 @@ export default function ServicesGrid() {
                 <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
                   <Image
                     src={service.image}
-                    alt={service.title}
+                    alt={`${service.title} - ${service.description} by Danil Scenic Tours Nairobi`}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover"
@@ -98,7 +98,7 @@ export default function ServicesGrid() {
 
         {/* Travel & Transport Solutions Section */}
         <h2 className="text-4xl md:text-5xl font-playfair text-[#2A4A35] text-center mt-24 mb-16">
-          Travel & Transport Solutions
+          Custom Safari Adventures & Professional Car Hire
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

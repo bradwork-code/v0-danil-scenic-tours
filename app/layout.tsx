@@ -27,11 +27,11 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'Danil Scenic Tours | Kenya Safari & Adventure Tours',
-  description: 'Guided safaris, cultural expeditions, adventure tours & beach escapes in Kenya. 5.0/5 rated. Licensed tour operator. Custom itineraries from $128/day.',
+  title: 'Best Tour Operator in Nairobi for Kenya Safari Tours & Masai Mara Safari Packages',
+  description: 'Explore Kenya with Danil Scenic Tours, the premier tour operator in Nairobi. Discover Masai Mara safari packages, private tours, and professional car hire. Unforgettable wildlife experiences await.',
   openGraph: {
-    title: 'Danil Scenic Tours | Kenya Safari & Adventure Tours',
-    description: 'Guided safaris, cultural expeditions, adventure tours & beach escapes in Kenya.',
+    title: 'Best Tour Operator in Nairobi for Kenya Safari Tours & Masai Mara Safari Packages',
+    description: 'Explore Kenya with Danil Scenic Tours, the premier tour operator in Nairobi. Discover Masai Mara safari packages, private tours, and professional car hire.',
     type: 'website',
   },
 }

@@ -30,7 +30,7 @@ export default function FeaturedDestinations() {
     <section className="py-20 md:py-28 px-4 md:px-6 bg-[#FAF4E8]">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-playfair text-[#2A4A35] text-center mb-4">
-          Where Will Kenya Take You?
+          Experience the Great Migration: Tailor-Made Masai Mara Safaris
         </h2>
         <p className="text-center text-[#1C1208] font-inter mb-16 md:mb-20 max-w-2xl mx-auto text-base md:text-lg">
           Explore some of Kenya's most spectacular destinations
@@ -66,7 +66,7 @@ export default function FeaturedDestinations() {
                 <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
                   <Image
                     src={dest.image}
-                    alt={dest.name}
+                    alt={`${dest.name} Safari Package - 4x4 Jeep with Danil Scenic Tours Nairobi - ${dest.description}`}
                     fill
                     className="object-cover"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

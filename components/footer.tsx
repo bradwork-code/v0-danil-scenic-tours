@@ -112,7 +112,7 @@ export default function Footer() {
           }}
         >
           <p className="text-center font-inter text-sm opacity-75">
-            © 2024 Danil Scenic Tours. Licensed by the Tourism Regulatory Authority of Kenya.
+            © 2026 Danil Scenic Tours. Licensed by the Tourism Regulatory Authority of Kenya.
           </p>
         </div>
       </div>

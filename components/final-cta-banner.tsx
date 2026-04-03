@@ -13,6 +13,7 @@ export default function FinalCTABanner() {
           alt="Maasai Mara sunset with acacia trees"
           fill
           className="object-cover"
+          sizes="100vw"
           priority
         />
       </div>
