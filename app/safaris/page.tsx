@@ -49,6 +49,7 @@ const services = [
     details: 'Available as: Private or customized',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2813%29-dvsdfGxqdqYzb94D6e93B8K10dhmKW.webp',
     isPlaceholder: false,
+    price: 'Packages from $180 / Night',
   },
   {
     title: 'Customized Safaris',
@@ -189,8 +190,13 @@ const SafarisPage = () => {
                 <div className="text-sm md:text-base text-[#1C1208] font-inter whitespace-pre-line opacity-90">
                   {service.details}
                 </div>
+                {service.price && (
+                  <p className="text-[#2A4A35] font-montserrat font-semibold text-base">
+                    {service.price}
+                  </p>
+                )}
                 <Link
-                  href="/book"
+                  href="/book#booking-form"
                   className="inline-flex items-center gap-2 text-[#D4870A] font-montserrat font-semibold hover:gap-3 transition-all"
                 >
                   Inquire About This {service.tag === 'All' ? 'Safari' : service.tag} <ArrowRight size={16} />
@@ -201,23 +207,7 @@ const SafarisPage = () => {
         </div>
       </section>
 
-      {/* Pricing Transparency */}
-      <section className="py-16 px-4 bg-[#F2E8D5]">
-        <div className="max-w-3xl mx-auto text-center space-y-6">
-          <h2 className="text-4xl font-playfair text-[#2A4A35]">
-            Honest Pricing. No Surprises.
-          </h2>
-          <p className="text-lg text-[#1C1208] font-inter leading-relaxed">
-            Our tours range from $128 to $420 per person per day (USD), excluding international flights. Your final quote depends on the park, duration, accommodation level, and group size. Contact us for a custom quote — it's free and there's no commitment.
-          </p>
-          <Link
-            href="/book"
-            className="inline-block px-8 py-3 bg-[#D4870A] text-[#1C1208] font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all pulse-glow"
-          >
-            Request a Free Quote
-          </Link>
-        </div>
-      </section>
+
 
       {/* Vehicle Info */}
       <section

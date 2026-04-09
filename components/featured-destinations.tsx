@@ -10,18 +10,21 @@ const destinations = [
     description: 'Kenya\'s most iconic reserve with the Big Five and Great Wildebeest Migration.',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-03-27%20094056-epSavrISmZLiwYYh4tsgGqat52e34W.webp',
     isPlaceholder: false,
+    price: 'From $350 / Day',
   },
   {
     name: 'Amboseli',
     description: 'Famous elephant herds set against Mt. Kilimanjaro\'s breathtaking backdrop.',
     image: '/images/amboseli-elephants.webp',
     isPlaceholder: false,
+    price: 'From $280 / Day',
   },
   {
     name: 'Lake Nakuru',
     description: 'Rift Valley gem renowned for flamingo colonies, rhinos, and leopards.',
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2812%29-s02sGMy6RmxVwGRkXsuExT87bOTlVI.webp',
     isPlaceholder: false,
+    price: 'From $250 / Day',
   },
 ]
 
@@ -83,6 +86,9 @@ export default function FeaturedDestinations() {
                 </h3>
                 <p className="text-[#1C1208] font-inter text-sm md:text-base leading-relaxed">
                   {dest.description}
+                </p>
+                <p className="text-[#2A4A35] font-montserrat font-semibold text-base">
+                  {dest.price}
                 </p>
                 <Link
                   href="/book#booking-form"

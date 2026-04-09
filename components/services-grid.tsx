@@ -50,6 +50,7 @@ const services = [
     isPlaceholder: false,
     modalButton: 'See Beach & Coast Options →',
     modalLink: '/safaris#beach',
+    price: 'Packages from $180 / Night',
   },
 ]
 
@@ -130,6 +131,11 @@ export default function ServicesGrid() {
                 <DialogDescription className="text-[#1C1208] font-inter leading-relaxed text-base">
                   {service.fullDescription}
                 </DialogDescription>
+                {service.price && (
+                  <p className="text-[#2A4A35] font-montserrat font-semibold text-base">
+                    {service.price}
+                  </p>
+                )}
                 <DialogFooter className="flex flex-col gap-3 mt-6">
                   <Link
                     href={service.modalLink}
@@ -206,6 +212,9 @@ export default function ServicesGrid() {
               </h3>
               <p className="text-[#1C1208] font-inter leading-relaxed">
                 Explore Kenya at your own pace with our fleet of reliable 4x4 Land Cruisers and Safari Vans. Available with professional drivers or as self-drive options.
+              </p>
+              <p className="text-[#2A4A35] font-montserrat font-semibold">
+                Daily Rates from $120
               </p>
               <Link
                 href="/book#booking-form"
