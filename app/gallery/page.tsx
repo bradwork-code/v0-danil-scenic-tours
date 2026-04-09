@@ -8,20 +8,23 @@ import FloatingButtons from '@/components/floating-buttons'
 import AccessibilityToolbar from '@/components/accessibility-toolbar'
 
 const galleryImages = [
-  { image: '/images/elephant-kilimanjaro.webp', isPlaceholder: false },
-  { image: '/images/amboseli-elephants.webp', isPlaceholder: false },
-  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29-okv68gOhxJpXw4n1wmi6LzVWsS5NI3.webp', isPlaceholder: false },
-  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2812%29-s02sGMy6RmxVwGRkXsuExT87bOTlVI.webp', isPlaceholder: false },
-  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2815%29-3ELJ3hQTT33H8nK1hqEBM53zsX5JEk.webp', isPlaceholder: false },
-  { image: '/images/beach-diving.webp', isPlaceholder: false },
-  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-loren-nelson-iii-393937649-14779646-JNYFWwU42lFLNOQPguKoXD6t0DPdE7.webp', isPlaceholder: false },
-  { image: '/images/cultural-gathering.webp', isPlaceholder: false },
-  { image: '/images/cheetah-resting.webp', isPlaceholder: false },
-  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2814%29-PPbHtHwWOiOCF897LhCVKG6lE946GY.webp', isPlaceholder: false },
-  { image: '/images/zebras-savanna.webp', isPlaceholder: false },
-  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2813%29-dvsdfGxqdqYzb94D6e93B8K10dhmKW.webp', isPlaceholder: false },
-  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-03-27%20091948-biQwM7Q4NGVZhod3fPu11cfeAmNkch.webp', isPlaceholder: false },
-  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2817%29-Cqk060woGnPsSL466intzq9kOsG3WA.webp', isPlaceholder: false },
+  { image: '/images/elephant-kilimanjaro.webp', alt: 'Maasai Mara Safari Kenya buffalo herd at sunset', isPlaceholder: false },
+  { image: '/images/amboseli-elephants.webp', alt: 'Amboseli National Park elephants with Mount Kilimanjaro', isPlaceholder: false },
+  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2816%29-okv68gOhxJpXw4n1wmi6LzVWsS5NI3.webp', alt: 'Lake Nakuru flamingos and wildlife reserve Kenya', isPlaceholder: false },
+  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2812%29-s02sGMy6RmxVwGRkXsuExT87bOTlVI.webp', alt: 'Lake Nakuru National Park scenic landscape', isPlaceholder: false },
+  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2815%29-3ELJ3hQTT33H8nK1hqEBM53zsX5JEk.webp', alt: 'Kenyan wildlife safari photography Big Five', isPlaceholder: false },
+  { image: '/images/beach-diving.webp', alt: 'Diani Beach coastal Kenya Indian Ocean', isPlaceholder: false },
+  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-loren-nelson-iii-393937649-14779646-JNYFWwU42lFLNOQPguKoXD6t0DPdE7.webp', alt: 'Adventure safari Kenya hiking and exploration', isPlaceholder: false },
+  { image: '/images/cultural-gathering.webp', alt: 'Cultural expeditions Kenya local traditions', isPlaceholder: false },
+  { image: '/images/cheetah-resting.webp', alt: 'Kenya wildlife cheetah resting in savanna', isPlaceholder: false },
+  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2814%29-PPbHtHwWOiOCF897LhCVKG6lE946GY.webp', alt: 'Kenyan safari wildlife spotting experience', isPlaceholder: false },
+  { image: '/images/zebras-savanna.webp', alt: 'Zebra herd Kenya savanna landscape', isPlaceholder: false },
+  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2813%29-dvsdfGxqdqYzb94D6e93B8K10dhmKW.webp', alt: 'Diani Beach escapes coastal resort Kenya', isPlaceholder: false },
+  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-03-27%20091948-biQwM7Q4NGVZhod3fPu11cfeAmNkch.webp', alt: 'Meru National Park sunset acacia trees Kenya', isPlaceholder: false },
+  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2817%29-Cqk060woGnPsSL466intzq9kOsG3WA.webp', alt: 'Aberdare National Park waterfalls highland forest Kenya', isPlaceholder: false },
+  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-03%20104911-swbjNVoqCHnEWJmaJx9kyU1T75H9Wv.webp', alt: 'Samburu National Reserve Milky Way stargazing Kenya', isPlaceholder: false },
+  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-31%20at%2022.58.01-CLCCC7SKHsOzZrZZbCo84McmWU3mT7.webp', alt: 'Professional Car Hire Kenya 4x4 Land Cruiser safari vehicle', isPlaceholder: false },
+  { image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-31%20at%2010.39.00-zWbc5Kff8Ov83PkpY3KGpLCAFeWlks.webp', alt: 'Custom Safaris Kenya luxury travel experience', isPlaceholder: false },
 ]
 
 const heroSlideImages = [
@@ -125,7 +128,7 @@ export default function GalleryPage() {
                 ) : (
                   <Image
                     src={item.image}
-                    alt="Gallery image"
+                    alt={item.alt || 'Gallery image'}
                     fill
                     className="object-cover"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
