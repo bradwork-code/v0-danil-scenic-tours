@@ -46,7 +46,7 @@ const services = [
     title: 'Beach Escapes',
     teaser: 'Unwind on Kenya\'s pristine Indian Ocean coastline.',
     fullDescription: 'Unwind with relaxing beach escapes along Kenya\'s beautiful coastline, combining luxury stays, ocean views, and seamless travel experiences after your safari adventure.',
-    image: '/images/beach-diving.webp',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image%20%2813%29-dvsdfGxqdqYzb94D6e93B8K10dhmKW.webp',
     isPlaceholder: false,
     modalButton: 'See Beach & Coast Options →',
     modalLink: '/safaris#beach',

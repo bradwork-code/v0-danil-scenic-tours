@@ -85,7 +85,7 @@ export default function FeaturedDestinations() {
                   {dest.description}
                 </p>
                 <Link
-                  href="/destinations"
+                  href="/book#booking-form"
                   className="inline-flex items-center gap-2 text-[#D4870A] font-montserrat font-semibold text-sm hover:gap-3 transition-all"
                 >
                   See This Destination <ArrowRight size={14} />
