@@ -65,7 +65,7 @@ export default function Hero() {
         </div>
         
         <h1 className="font-playfair text-5xl sm:text-6xl md:text-7xl font-extrabold text-white mb-4 md:mb-6 leading-tight" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
-          Best Tour Operator Nairobi
+          Best Tour Operator in Nairobi
         </h1>
         
         <p className="text-white text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed" style={{ opacity: 0.85 }}>
