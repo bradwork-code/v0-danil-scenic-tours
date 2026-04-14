@@ -3,10 +3,30 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { CheckCircle } from 'lucide-react'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import FloatingButtons from '@/components/floating-buttons'
 import AccessibilityToolbar from '@/components/accessibility-toolbar'
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog'
+import { Spinner } from '@/components/ui/spinner'
+import { bookingFormSchema, type BookingFormData } from '@/lib/validations/booking'
 
 const heroSlideImages = [
   '/images/cheetah-resting.webp',
@@ -122,39 +142,233 @@ export default function BookPage() {
         </div>
       </section>
 
-      {/* Contact Action Hub */}
+      {/* Booking Form */}
       <section className="py-20 px-4 bg-[#FAF4E8]">
-        <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-12" id="booking-form">
-          <h2 className="text-3xl md:text-4xl font-playfair text-[#2A4A35] text-center mb-8">
-            Ready to Book Your Safari?
-          </h2>
-          <p className="text-center text-[#1C1208] font-inter mb-12 text-base md:text-lg">
-            Connect with our team directly via WhatsApp or phone to plan your perfect safari adventure.
-          </p>
-          
-          <div className="flex flex-col gap-6">
-            {/* WhatsApp Button */}
-            <Link
-              href="https://wa.me/254722919249"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full py-4 px-6 bg-[#25D366] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 text-lg"
-            >
-              Chat with us on WhatsApp
-            </Link>
+        <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-12">
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" id="booking-form">
+              {/* Name */}
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className={labelClassName}>Full Name *</FormLabel>
+                    <FormControl>
+                      <input
+                        {...field}
+                        type="text"
+                        className={inputClassName}
+                        placeholder="Your name"
+                        disabled={isLoading}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-            {/* Call Button */}
-            <Link
-              href="tel:+254722919249"
-              className="w-full py-4 px-6 bg-[#F97316] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 text-lg"
-            >
-              Call Now: +254 722 919 249
-            </Link>
+              {/* Email */}
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className={labelClassName}>Email Address *</FormLabel>
+                    <FormControl>
+                      <input
+                        {...field}
+                        type="email"
+                        className={inputClassName}
+                        placeholder="your@email.com"
+                        disabled={isLoading}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {/* Phone */}
+              <FormField
+                control={form.control}
+                name="phone"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className={labelClassName}>Phone / WhatsApp *</FormLabel>
+                    <FormControl>
+                      <input
+                        {...field}
+                        type="tel"
+                        className={inputClassName}
+                        placeholder="+1 (555) 123-4567"
+                        disabled={isLoading}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {/* Service Type */}
+              <FormField
+                control={form.control}
+                name="tourType"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className={labelClassName}>Service Type *</FormLabel>
+                    <FormControl>
+                      <select
+                        {...field}
+                        className={inputClassName}
+                        disabled={isLoading}
+                      >
+                        <option value="">Select a service type</option>
+                        <option value="professional-car-hire">Professional Car Hire</option>
+                        <option value="custom-safari">Custom Safari</option>
+                        <option value="maasai-mara-safari">Maasai Mara Safari</option>
+                        <option value="amboseli-safari">Amboseli Safari</option>
+                        <option value="lake-nakuru-safari">Lake Nakuru Safari</option>
+                      </select>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {/* Destination */}
+              <FormField
+                control={form.control}
+                name="destination"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className={labelClassName}>Preferred Destination *</FormLabel>
+                    <FormControl>
+                      <select
+                        {...field}
+                        className={inputClassName}
+                        disabled={isLoading}
+                      >
+                        <option value="">Select a destination</option>
+                        <option value="maasai-mara">Maasai Mara</option>
+                        <option value="amboseli">Amboseli</option>
+                        <option value="tsavo">Tsavo East & West</option>
+                        <option value="lake-nakuru">Lake Nakuru</option>
+                        <option value="lake-bogoria">Lake Bogoria</option>
+                        <option value="diani">Diani Beach</option>
+                        <option value="multiple">Multiple Destinations</option>
+                      </select>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {/* Dates */}
+              <FormField
+                control={form.control}
+                name="dates"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className={labelClassName}>Preferred Travel Dates</FormLabel>
+                    <FormControl>
+                      <input
+                        {...field}
+                        type="text"
+                        className={inputClassName}
+                        placeholder="e.g., June 15-22, 2025 (or flexible)"
+                        disabled={isLoading}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {/* Group Size */}
+              <FormField
+                control={form.control}
+                name="groupSize"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className={labelClassName}>Group Size</FormLabel>
+                    <FormControl>
+                      <input
+                        {...field}
+                        type="text"
+                        className={inputClassName}
+                        placeholder="Number of travelers"
+                        disabled={isLoading}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {/* Message */}
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className={labelClassName}>Additional Details</FormLabel>
+                    <FormControl>
+                      <textarea
+                        {...field}
+                        rows={5}
+                        className={inputClassName}
+                        placeholder="Tell us about your interests, budget, accommodation preferences, or any special requests..."
+                        disabled={isLoading}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="w-full py-3 bg-[#D4870A] text-[#1C1208] font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all pulse-glow disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              >
+                {isLoading ? (
+                  <>
+                    <Spinner className="size-5" />
+                    Sending...
+                  </>
+                ) : (
+                  'Send Inquiry'
+                )}
+              </button>
+
+              <p className="text-xs text-[#1C1208] opacity-75 font-inter text-center">
+                We&apos;ll review your inquiry and respond within 24 hours via email or WhatsApp.
+              </p>
+            </form>
+          </Form>
+
+          {/* Alternative Contact */}
+          <div className="mt-12 pt-8 border-t border-[#D4870A]">
+            <h3 className="text-xl font-playfair text-[#2A4A35] mb-4">Prefer to chat directly?</h3>
+            <div className="flex gap-4 flex-wrap">
+              <Link
+                href="https://wa.me/254722919249"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-2 bg-[#25D366] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all"
+              >
+                WhatsApp
+              </Link>
+              <Link
+                href="tel:+254722919249"
+                className="px-6 py-2 bg-[#2A4A35] text-white font-montserrat font-semibold rounded-lg hover:shadow-lg transition-all"
+              >
+                Call Now
+              </Link>
+            </div>
           </div>
-
-          <p className="text-xs text-[#1C1208] opacity-75 font-inter text-center mt-8">
-            Our team is available to help you plan your dream safari experience.
-          </p>
         </div>
       </section>
 
